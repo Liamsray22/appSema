@@ -6,6 +6,7 @@ import Historial from './Pages/Historial'
 import SideBarContainer from './Components/Containers/SideBarContainer'
 import Config from './Components/Config'
 import Button from './Components/Button'
+import PantallaBocina from './Components/PantallaBocina'
 
 
 
@@ -18,6 +19,7 @@ const App = ()=>(
             <Route exact path="/historial" component={Historial} />
             <Route exact path="/config" component={Config} />
             <Route exact path="/funcion" component={Button} />
+            <Route exact path="/pbocina" component={PantallaBocina} />
         </Switch>
         </BrowserRouter>
 )
