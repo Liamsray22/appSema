@@ -7,6 +7,8 @@ import axios from 'axios'
 
 const PantallaBocina = ()=>{
 
+    const[cruzar, setCruzar] = useState(false)
+
     var num = 3
     useEffect(()=>{
         setInterval(()=>{
@@ -16,25 +18,28 @@ const PantallaBocina = ()=>{
     if(response.data == "verde"){
         setCruzar(true)
         speechSynthesis.speak(new SpeechSynthesisUtterance(num))
+        
     }else{
+        setTimeout(()=>{
         setCruzar(false)
-
+        },5000)
     }
   }).catch(
     function (error) {
     console.log(error);
   });
-        },3000)
+        },4000)
         
     })
     
 
-    const[cruzar, setCruzar] = useState(false)
     return(
         <div>
             <Menu/>
             <div className="bocina">
-                <img src={cruzar?sema1:sema2} />
+                <div className="imgpantalla">
+                <img  src={cruzar?sema1:sema2} />
+                </div>
             </div> 
         </div>
     )

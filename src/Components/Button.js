@@ -93,7 +93,7 @@ return(
       <div className="fletrero">
         <div className="letrero">
           <strong>PUSH BUTTON FOR</strong>
-          <br/><i class="fas fa-walking"></i>
+          <br/><i className="fas fa-walking"></i>
         </div>
         </div>
         <button onClick={clickbutton}  className="am" id="bt">

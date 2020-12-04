@@ -1,0 +1,32 @@
+@font-face{
+    font-family: FuenteDigital;
+
+    src:url(../Components/fuentes/DS-DIGI.TTF)
+}
+@font-face{
+    font-family: FuenteDigitalBold;
+    src:url(../Components/fuentes/DS-DIGIB.TTF);
+}
+@font-face{
+    font-family: FuenteDigitalItalica;
+    src:url(../Components/fuentes/DS-DIGII.TTF);
+}
+@font-face{
+    font-family: FuenteDigitalItalicaBold;
+    src:url(../Components/fuentes/DS-DIGIT.TTF);
+}
+
+.letra{
+    font-family: FuenteDigitalBold;
+    color:orangered;
+}
+.containel{
+    background-image: url("https://zemper.com/coatzem/uploads/2016/10/fondo-blanco.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size:35px;
+
+}

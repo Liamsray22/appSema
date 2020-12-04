@@ -1,54 +1,60 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import '../Css/historial.css'
 
-const History =()=>(
+const History =()=>{
+
+  const [data, setData] = useState([]);
+  const [place, setPlace] = useState("");
+
+
+  useEffect(()=>{
+    axios.post('http://localhost:3001/History',{idUsuario:window.$aidi}).then(
+    function (response) {
+    console.log(response.data)
+    setData(response.data)
+    setPlace(response.data[0].lugar)
+  }).catch(
+    function (error) {
+    console.log(error);
+  });
+  },[])
+  
+
+
+
+
+
+return (
 <>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
-<div class="containerr">
+<div class="containel">
 	<div class="row">
 		
         
         <div class="col-md-12">
-        <h1>Historial de Usuario</h1>
+        <center><b><h1 className="letra">Historial de Usuario</h1></b></center>
+    
+<h3><i class="fas fa-road"></i><strong>Numero de Cruces:</strong> {data.length}</h3>
+<br/>
+<hr/>    
+<h3><i class="fas fa-shoe-prints"></i><strong>Distancia recorrida:</strong> {data.length} metros</h3>    
+<br/>
+<hr/> 
+<h3><i class="fas fa-map-marked-alt"></i><strong>Ubicacion mas frecuentada:</strong> {place}</h3>    
 
-                
-                   
-                   <thead>
-                   
-                   <th>Seleccion</th>
-                   <th>Id</th>
-                    <th>Distancia</th>
-                     <th>Lugar</th>
-                     <th>Usos</th>
-                     <th>Hora</th>                      
-                       <th>Delete</th>
-                   </thead>
-    
-    <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
-    <td>0</td>
-    <td>10mt</td>
-    <td>Avenida 27 de febrero</td>
-    <td>1</td>
-    <td>22:50:60</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
-    
-    
 
                 
             
         </div>
 	</div>
 </div>
+
 </>
 
 
 )
+
+}
 
 export default History

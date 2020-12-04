@@ -21,7 +21,7 @@ rel="stylesheet" id="bootstrap-css"/>
                 <Link to="/principal" className="nav-link">Home</Link>
             </li>
             <li className="nav-list-item">
-                <Link to="/pbocina" className="nav-link">Pantalla con Bocina</Link>
+                <Link to="/pbocina" className="nav-link">Semaforo Peatonal</Link>
             </li>
             <li className="nav-list-item">
                 <Link to="/funcion" className="nav-link">Funcionalidades del semaforo</Link>

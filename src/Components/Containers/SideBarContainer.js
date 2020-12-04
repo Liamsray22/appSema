@@ -14,6 +14,7 @@ const SideBarContainer =()=>(
                 imagen = {item.img}
                 texto = {item.text}
                 clase = {item.className}
+                link = {item.link}
             />
             )
         })
