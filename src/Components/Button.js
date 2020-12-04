@@ -18,13 +18,6 @@ const Button = () => {
     setTXT("");
     setTimeout(()=>{
 
-      var enviarDatos ={
-        lugar :"Avenida 27 de Febrero",
-          uso:1,
-          fecha:"03/12/2020",
-          idUsuario:window.$aidi
-     }
-      
       axios.post('http://localhost:3001/Boton', {mensaje:"Me presione"})
           .then(function (response) {
             console.log(response.data);
@@ -33,18 +26,7 @@ const Button = () => {
             console.log(error);
           });
 
-          
-
-         console.log("=====enviarDatos====== ", enviarDatos)
-
-         axios.post('http://localhost:3001/Historial', enviarDatos)
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-            console.log(enviarDatos)
-          });
+        
 
       return(speechSynthesis.speak(new SpeechSynthesisUtterance("Espere, Cambiando a verde")));
       
