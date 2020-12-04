@@ -57,6 +57,9 @@ const Login =()=>{
          axios.post('http://localhost:3001/Login', enviarDatos)
           .then(function (response) {
             console.log(response.status);
+            console.log(response.data);
+            window.$aidi = response.data._id
+            console.log(window.$aidi)
             setVamonos(true)
           })
           .catch(function (error) {

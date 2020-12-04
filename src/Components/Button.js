@@ -8,16 +8,24 @@ const Button = () => {
 
   const [time, setTime] = useState("")
   const [txt, setTXT] = useState("PUSH")
- const hola = "Hola"
+  const hola = "Hola"
   const tiempo = time;
   const tx=txt 
+
  function clickbutton()  {
   if (txt=="PUSH"){
-   setTime(10);
+   setTime(5);
     setTXT("");
     setTimeout(()=>{
+
+      var enviarDatos ={
+        lugar :"Avenida 27 de Febrero",
+          uso:1,
+          fecha:"03/12/2020",
+          idUsuario:window.$aidi
+     }
       
-      axios.post('http://localhost:3001/Boton', {mensaje:"Un Mensaje"})
+      axios.post('http://localhost:3001/Boton', {mensaje:"Me presione"})
           .then(function (response) {
             console.log(response.data);
           })
@@ -25,10 +33,23 @@ const Button = () => {
             console.log(error);
           });
 
+          
+
+         console.log("=====enviarDatos====== ", enviarDatos)
+
+         axios.post('http://localhost:3001/Historial', enviarDatos)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+            console.log(enviarDatos)
+          });
+
       return(speechSynthesis.speak(new SpeechSynthesisUtterance("Wait")));
       
       
-    },10000)
+    },5000)
   
 
   }
@@ -37,9 +58,19 @@ const Button = () => {
     clearTimeout(timeout);
     window.location.reload()
     return(speechSynthesis.speak(new SpeechSynthesisUtterance("!Cancel!")));
-
    }
   }
+
+//   var tiempo =0
+// function click(){
+//   if (tiempo > 0){
+//     window.location.reload()
+//   }
+//   tiempo = 10
+//   setTimeout(()=>{
+//     console.log('que haga la vaina')
+//   },tiempo)
+// }
 
  
   const timeout = setTimeout(()=>{
