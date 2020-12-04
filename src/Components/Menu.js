@@ -14,11 +14,11 @@ rel="stylesheet" id="bootstrap-css"/>
 
  <nav className="main-navigation">
         <div className="navbar-header animated fadeInUp">
-            <Link className="navbar-brand" to="/principal">ISemaforo</Link>
+            <Link className="navbar-brand" to="/">ISemaforo</Link>
         </div>
         <ul className="nav-list">
             <li className="nav-list-item">
-                <Link to="/principal" className="nav-link">Home</Link>
+                <Link to="/" className="nav-link">Home</Link>
             </li>
             <li className="nav-list-item">
                 <Link to="/pbocina" className="nav-link">Semaforo Peatonal</Link>
@@ -26,12 +26,8 @@ rel="stylesheet" id="bootstrap-css"/>
             <li className="nav-list-item">
                 <Link to="/funcion" className="nav-link">Funcionalidades del semaforo</Link>
             </li>
-            <li className="nav-list-item">
-                <Link to="/historial" className="nav-link">Historial</Link>
-            </li>
-            <li className="nav-list-item">
-                <Link to="/" className="nav-link">Cerrar Sesion</Link>
-            </li>
+          
+            
         </ul>
 
     </nav>
