@@ -46,7 +46,7 @@ const Button = () => {
             console.log(enviarDatos)
           });
 
-      return(speechSynthesis.speak(new SpeechSynthesisUtterance("Wait")));
+      return(speechSynthesis.speak(new SpeechSynthesisUtterance("Espere, Cambiando a verde")));
       
       
     },5000)
@@ -57,7 +57,7 @@ const Button = () => {
    if (tiempo>0){
     clearTimeout(timeout);
     window.location.reload()
-    return(speechSynthesis.speak(new SpeechSynthesisUtterance("!Cancel!")));
+    return(speechSynthesis.speak(new SpeechSynthesisUtterance("!Cancelar!")));
    }
   }
 
